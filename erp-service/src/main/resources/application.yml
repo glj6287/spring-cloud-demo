@@ -1,0 +1,112 @@
+spring:
+  application:
+    name: erp-service
+  profiles:
+    active: dev
+
+server:
+  port: 5200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    db-column-underline: true
+    refresh-mapper: true
+    logic-delete-value: 1
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+  ## dev 开发, test测试部署, pro 生产部署
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://172.21.0.6:3306/ylgj_erp?useUnicode=true&characterEncoding=UTF8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: dbyl2018_123
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    com.yoland: debug
+
+custom:
+  redis:
+    hostname: 172.21.0.4
+    maxTotal: 10
+    minIdle: 1
+    testOnBorrow: true
+    maxWait: 5000
+    testOnReturn: true
+    testWhileIdle: true
+
+
+---
+spring:
+  profiles: pro
+  datasource:
+    url: jdbc:mysql://${dbServer:119.3.6.223}/yolanddbtemplate?useSSL=false&allowMultiQueries=true
+    username: yoland_waterdb
+    password: yoland@2018Waterdb
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+logging:
+  level:
+    com.yoland: info
+
+custom:
+  redis:
+    hostname: 122.112.210.179
+    maxTotal: 10
+    minIdle: 1
+    testOnBorrow: true
+    maxWait: 5000
+    testOnReturn: true
+    testWhileIdle: true
+
+
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://${dbServer:119.3.6.223}/yolanddbtemplate?useSSL=false&allowMultiQueries=true
+    username: yoland_waterdb
+    password: yoland@2018Waterdb
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    com.yoland: info
+
+custom:
+  redis:
+    hostname: 122.112.210.179
+    maxTotal: 10
+    minIdle: 1
+    testOnBorrow: true
+    maxWait: 5000
+    testOnReturn: true
+    testWhileIdle: true

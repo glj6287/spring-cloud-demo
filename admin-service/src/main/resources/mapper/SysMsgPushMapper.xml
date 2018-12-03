@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yoland.admin.mapper.SysMsgPushMapper" >
+  <resultMap id="BaseResultMap" type="com.yoland.common.entity.original.SysMsgPush" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="msg_type" property="msgType" jdbcType="VARCHAR" />
+    <result column="tpl_code" property="tplCode" jdbcType="VARCHAR" />
+    <result column="app_code" property="appCode" jdbcType="VARCHAR" />
+    <result column="msg_title" property="msgTitle" jdbcType="VARCHAR" />
+    <result column="msg_content" property="msgContent" jdbcType="VARCHAR" />
+    <result column="receive_code" property="receiveCode" jdbcType="VARCHAR" />
+    <result column="receive_user_code" property="receiveUserCode" jdbcType="VARCHAR" />
+    <result column="receive_user_name" property="receiveUserName" jdbcType="VARCHAR" />
+    <result column="send_user_code" property="sendUserCode" jdbcType="VARCHAR" />
+    <result column="send_user_name" property="sendUserName" jdbcType="VARCHAR" />
+    <result column="send_date" property="sendDate" jdbcType="VARCHAR" />
+    <result column="plan_push_date" property="planPushDate" jdbcType="VARCHAR" />
+    <result column="push_number" property="pushNumber" jdbcType="INTEGER" />
+    <result column="push_return_code" property="pushReturnCode" jdbcType="VARCHAR" />
+    <result column="push_return_content" property="pushReturnContent" jdbcType="VARCHAR" />
+    <result column="push_status" property="pushStatus" jdbcType="VARCHAR" />
+    <result column="biz_code" property="bizCode" jdbcType="VARCHAR" />
+    <result column="biz_type" property="bizType" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="editor" property="editor" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="deleted" property="deleted" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, msg_type, tpl_code, app_code, msg_title, msg_content, receive_code, receive_user_code, 
+    receive_user_name, send_user_code, send_user_name, send_date, plan_push_date, push_number, 
+    push_return_code, push_return_content, push_status, biz_code, biz_type, create_time, 
+    creator, update_time, editor, version, remark, deleted
+  </sql>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yoland.admin.mapper.SysBtnMapper" >
+  <resultMap id="BaseResultMap" type="com.yoland.common.entity.original.SysBtn" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="btn_code" property="btnCode" jdbcType="VARCHAR" />
+    <result column="btn_name" property="btnName" jdbcType="VARCHAR" />
+    <result column="btn_title" property="btnTitle" jdbcType="VARCHAR" />
+    <result column="menu_code" property="menuCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="editor" property="editor" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="deleted" property="deleted" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, btn_code, btn_name, btn_title, menu_code, create_time, creator, update_time, 
+    editor, version, remark, deleted
+  </sql>
+
+
+</mapper>
